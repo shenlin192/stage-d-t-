@@ -8,4 +8,4 @@ Folders like ***"images" "audios" "styles" "Js"*** cantain different kinds of re
 
 Php files inside each project are used to get/updata data from/of database correspond to that project.
 
-Folders like ***"admin" "data" "includes" "modules" "temp"*** are some php configurations which are used to set up the basic developping envirnment.
+Folders like ***"admin" "data" "includes" "modules" "temp"*** contain some php configurations which are used to set up the basic developping envirnment.
