@@ -1,0 +1,501 @@
+footer{
+    text-align: center;
+    height: 65px;
+    background: RGBA(0,0,0,.8);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+}
+
+#root{
+    background-image: url("../images/bg3-s.jpg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+
+#root h1,h2,h3{
+    /*为了清除bootstrap的默认样式*/
+    margin:0
+}
+
+.component{
+    padding:10px
+}
+
+/*********************************************左侧栏样式*********************************************/
+#firstTierdiv {
+    position: fixed;
+    top: 0px;
+    z-index: 1001;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    background: #2dbce6;
+}
+
+#firstTierdiv ul {
+    padding: 0px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#firstTierdiv ul li {
+    display: block;
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#secondTierMenu .wqdDtext{
+    margin: 0px;
+}
+
+#secondTierMenu{
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 50px;
+    height: 100%;
+    width: 300px;
+    background: #fff;
+    z-index: 1100;
+    border-right: 1px solid rgba(0, 0, 0, 0.14);
+    padding:20px
+}
+
+#secondTierMenu .secondTierDiv {
+    overflow: hidden;
+    height: 50px;
+    border-bottom: 1px solid #cccccc;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+#secondTierMenu .secondTierDiv>*{
+    margin:auto;
+}
+
+#secondTierMenu .secondTierContent>div{
+    margin: 20px;
+}
+
+#secondTierMenu .component{
+    cursor: pointer;
+}
+
+#secondTierMenu .type201,#secondTierMenu .type202{
+
+   width: 150px;
+   height: 100px;
+   margin: 20px;
+}
+
+#secondTierMenu img{
+   width:100%;
+    height: 100%;
+}
+
+/****************************************定义section中所有元素的属性***************************************************/
+#root .element{
+    position:absolute;
+}
+
+#root img{
+    margin: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/***************************************以type作为单位，定义每一类元素基本属性***************************************/
+.type202 img{
+    border-radius: 50%;
+}
+
+/*****************************************************************************/
+.multimedia{
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+}
+
+.multimedia iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.multimedia audio{
+    width: 100%;
+    height: 100%;
+}
+
+.draggable{
+    cursor: move;
+    position:absolute;
+}
+
+/**********************************************resizable handle style********************************************/
+.resizable .ui-resizable{
+    position: absolute !important;
+}
+.resizable .ui-resizable-handle {
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    position: absolute;
+    /*display:none;*/
+}
+.resizable .ui-resizable-nw {
+    left: -5px;
+    top: -5px;
+    cursor: nw-resize;
+}
+.resizable .ui-resizable-ne {
+    top: -5px;
+    right: -5px;
+    cursor: ne-resize;
+}
+.resizable .ui-resizable-sw {
+    bottom: -5px;
+    left: -5px;
+    cursor: sw-resize;
+}
+.resizable .ui-resizable-se {
+    bottom: -5px;
+    right:-5px;
+    cursor: se-resize;
+}
+.resizable .ui-resizable-n {
+    top: -5px;
+    left:50%;
+    cursor: n-resize;
+}
+.resizable .ui-resizable-s {
+    bottom: -5px;
+    left: 50%;
+    cursor: s-resize;
+}
+.resizable .ui-resizable-w {
+    left:-5px;
+    top:calc(50% - 5px);
+    cursor: w-resize;
+}
+.resizable .ui-resizable-e {
+    right:-5px;
+    top:calc(50% - 5px);
+    cursor: e-resize;
+}
+
+
+/******************************根据不同编辑框设定不同的input section宽度**********************************/
+#imageEditor .input-section{
+    position:relative;
+    box-sizing: content-box;
+    padding:25px;
+    width:200px;
+    outline: #dcdcdc solid 1px;
+    margin: 1px auto 20px auto;
+}
+
+
+/*************以下是编辑框的默认样式（这些都是微店的默认样式，以后再更改成微企点的默认样式）************************/
+.edit-box{
+    width: 680px;
+    position: fixed;
+    left: 400px;
+    top: 100px;
+    background-color: rgb(255,255,255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    margin-bottom: 100px;
+    z-index: 10;
+}
+
+.edit-box .notice{
+    border-bottom: 1px solid #dcdcdc;
+    padding:20px;
+    margin-bottom: 20px;
+}
+
+.edit-box .notice .notice-text{
+    display:inline-block;
+    font-size: 16px;
+    line-height: 24px;
+    color: #999;
+}
+
+.edit-box .cancel-edit-box{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    color: red;
+    cursor: pointer;
+}
+
+.edit-box input[type="file"] {
+    display: none;
+}
+
+.edit-box .custom-file-upload {
+    margin: 10px auto;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+}
+
+.edit-box .custom-file-upload img{
+    width: 100%;
+    max-height: 150px;
+}
+
+.edit-box .custom-file-upload .prompt-text{
+    color: #999;
+    margin-top: -30%;
+    margin-bottom: 15%;
+    text-align: center;
+}
+
+.edit-box .input-section input{
+    width: 100%;
+    height: 30px;
+    margin: 0 auto 10px;
+    border-radius: 0px
+}
+
+.edit-box .input-section .input-items{
+    width:100%;
+    margin:auto;
+}
+
+.edit-box .input-section .input-items div{
+    width:100%;
+    margin:auto
+}
+
+.edit-box .input-section .input-items input{
+    display: inline-block;
+    width: 75%;
+    height: 38px;
+    border: 1px solid #dcdcdc;
+    margin: 0 0 10px ;
+    border-radius: 0px;
+}
+
+.edit-box .input-section .input-items span{
+    display: inline-block;
+    width:25%;
+    line-height: 40px;
+    font-size: 14px;
+    color: #7f7f7f;
+}
+
+/*****************************************element toolbar 样式********************************************************/
+#elementToolbar1{
+    display: none;
+    position: absolute;
+}
+
+.elementToolbar {
+    position: absolute;
+    height: 50px;
+    z-index: 999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.elementToolbar .elemBtnBox {
+    position: relative;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.elementToolbar .elemBtn {
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    margin-top: 6px;
+    display: block;
+}
+
+.elementToolbar .elemBtnBox:hover,
+.elemBtnBox.on {
+    background-color: #49a2d2;
+    color: #fff;
+}
+
+.elementToolbar .elemBtnBox.delete:hover {
+    background-color: #ff6a6a;
+}
+
+.elementToolbar .elemText {
+    display: none;
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.elementToolbar .elemBtnBox:hover .elemBtn,
+.elemBtnBox.on .elemBtn {
+    display: none;
+}
+
+.elementToolbar .elemBtnBox:hover .elemText,
+.elemBtnBox.on .elemText {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/*********下面URL的路径以后要结合projectPath进行修改*****************/
+.elemBtnBox.article .elemBtn {
+    background: url(../images/preview/btn.png) no-repeat center -580px;
+}
+
+.elemBtnBox.setting .elemBtn {
+    background: url(../images/preview/btn.png) no-repeat center 0px;
+}
+
+.elemBtnBox.zindex .elemBtn {
+    background: url(../images/preview/btn.png) no-repeat center -40px;
+}
+
+.elemBtnBox.delete .elemBtn {
+    background: url(../images/preview/btn.png) no-repeat center -80px;
+}
+
+.elemBtnBox.help .elemBtn {
+    background: url(../images/preview/btn.png) no-repeat center -120px;
+}
+
+.elemBtnBox.dogroup .elemBtn {
+    background: url(../images/preview/btn.png) no-repeat center -237px;
+}
+
+.elemBtnBox.removegroup .elemBtn {
+    background: url(../images/preview/btn.png) no-repeat center -197px;
+}
+
+.elemBtnBox.copy .elemBtn {
+    background: url(../images/preview/btn.png) no-repeat center -276px;
+}
+
+.elemBtnBox.carouseAddElement .elemBtn {
+    background: url(../images/preview/btn.png) no-repeat center -318px;
+}
+
+.elemBtnBox.addFreeContainer .elemBtn {
+    background: url(../images/preview/btn.png) no-repeat center -523px;
+}
+
+.elemBtnBox.align .elemBtn {
+    background: url(../images/preview/btn.png) no-repeat center -358px;
+}
+
+.elemBtnBox.distribute .elemBtn {
+    background: url(../images/preview/btn.png) no-repeat center -446px;
+}
+
+.elemBtnBox.animate .elemBtn {
+    background: url(../images/preview/btn.png) no-repeat center -402px;
+}
+
+.elemBtnBox.gotoModityDetail .elemBtn {
+    background: url(../images/preview/btn.png) no-repeat center -622px;
+}
+
+.elemBtnBox .elenentToolbarContext {
+    position: absolute;
+    top: 38px;
+    display: none;
+    width: 74px;
+    font-size: 12px;
+    padding: 4px 0;
+    background: #fff;
+    border-radius: 4px;
+    left: 24px;
+    -webkit-transform: translateX(-23px);
+    -ms-transform: translateX(-23px);
+    -o-transform: translateX(-23px);
+    transform: translateX(-23px);
+    box-shadow: 0px 0px 6px #ccc;
+}
+
+.elemBtnBox .elenentToolbarContext li {
+    color: #333;
+    line-height: 28px;
+    background-color: #fff;
+    border-bottom: solid 1px #ebebeb;
+    cursor: pointer;
+    list-style-type:none;
+}
+
+.elemBtnBox .elenentToolbarContext li:hover{
+    background-color: lightblue;
+}
+
+/*****************************************以下是保存按钮闪光特效（不需要修改）****************************************/
+.save-btn,.preview-page {
+    margin: 15px;
+    border-radius: 2px;
+    line-height: 30px;
+    display: inline-block;
+    position: relative;
+    background-color: #4a83dc;
+    border: none;
+    color: white;
+    width:  100px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.save-btn::after,.preview-page::after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.6s
+}
+
+.save-btn:active::after,.preview-page:active::after {
+    /***从此状态变成上面的状态***/
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+
+
+
+

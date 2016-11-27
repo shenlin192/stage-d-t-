@@ -1,0 +1,424 @@
+/************************************以下按html标签定义的样式基本，如果页面整体结构不变则不用改变**********************/
+#hook{
+    outline: solid #dcdcdc 1px;
+    min-height: 568px;
+}
+
+body {
+    background: #f8f8f8;
+    text-align: center;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 78px;
+    background: RGBA(0,0,0,.8);
+    padding: 5px;
+    color: white;
+    z-index: 1099;
+}
+
+header p {
+    margin: 20px;
+    font-size: larger;
+}
+
+article{
+    background: #eee;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    margin: 25px 0px 100px 150px;
+}
+
+ul, li {
+    list-style: none;
+}
+
+footer{
+    height: 65px;
+    background: RGBA(0,0,0,.8);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.lib{
+    /******为了让其子元素可以顺利定位*****/
+    position:relative;
+}
+
+#allmap {width: 100%; height:300px; overflow: hidden;margin:0;font-family:"微软雅黑";}
+/**************************add-box的样式,这里以后基本不需要修改的，因为add-box只有一种类型*****************************/
+.add-box{
+    width: 780px;
+    height:500px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -360px;
+    margin-top:-240px;
+
+
+    background-color: white;
+    box-shadow: 0 4px 8px 1024px rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    padding: 20px;
+    z-index: 100;
+    display: none;
+
+}
+
+.add-box img {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ededed;
+}
+
+.add-box button {
+    padding:8px 16px;
+    display: inline-block;
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+.add-box span{
+    position: absolute;
+    right: 5%;
+    color: red;
+    cursor: pointer;
+}
+
+.add-box .img-item{
+    display: inline-block;
+    width: 45%;
+    margin: 5px auto;
+}
+
+.add-box .group3 .img-item{
+    width: 30%;
+}
+
+.add-box .img-item p{
+    font-size: 12px;
+    color: #999999;
+    line-height: 30px;
+}
+
+.add-box .img-item img:hover {
+    border: 1px solid #a1a1a1;
+    cursor: pointer;
+}
+
+.add-box .img-group{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    height:420px;
+    overflow: auto;
+}
+
+.add-box ul.pagination {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.add-box ul.pagination li {
+
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    height: 100%;
+    box-sizing: border-box;
+    margin-right: 5px;
+    width: 80px;
+    font-size: 14px;
+    color: #111111;
+    cursor: pointer;
+}
+
+.add-box ul.pagination li:hover {
+    cursor: pointer;
+}
+
+.add-box hr{
+    margin: 5px;
+}
+
+.add-box .class1{
+    left:20px;
+    position: absolute;
+    top: 55px;
+    height: 4px;
+    border: none;
+    color: #333;
+    background-color: #333;
+    width: 60px;
+}
+
+
+/*************************这里以后基本不需要修改,这是display-box的基本样式（需要改变的是后面各个lib）******************/
+.display-box {
+    /****设置position的目的是让z-index生效****/
+    position:relative;
+    z-index:1;
+    width: 99%;
+    margin: 0 auto 15px auto;
+    display: block;
+}
+
+.display-box .auxiliary-area {
+    text-align: center;
+    position: absolute;
+    top: -10px;
+    right: -60px;
+    width: 15%;
+    display: none;
+    height: 110px;
+    cursor: default;
+
+}
+
+.display-box .auxiliary-area p{
+    background: #bfbfbf;
+    color: white;
+}
+
+.display-box .auxiliary-area p:hover{
+    background: #666;
+}
+
+.display-box.selected-box:before{
+    content: "";
+    box-sizing: content-box;
+    border: 2px solid #4a83dc;
+    background-color: #ffffff;
+    box-shadow: 0 0 25px rgba(0, 0, 0,0.5);
+    position: absolute;
+    z-index: -1;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+}
+
+.mouse-over-display-box{
+    /*用outline就是position：absolute 的 border 可以不占位置*/
+    outline:1px black dashed ;
+    outline-offset: 1px;
+}
+
+/*******edit-box的样式，需要根据不同lib,使用不同的edit box,以后要不断完善（以.edit-box开头的样式尽量不要修改）**********/
+.edit-box{
+    width:680px;
+    position: absolute;
+    left:400px;
+    top: -100px;
+    display:none;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    padding: 20px;
+    margin-bottom: 100px;
+}
+
+.edit-box .notice{
+    border-bottom: 1px solid #dcdcdc;
+    padding: 40px 40px 39px 40px;
+    margin-bottom: 50px;
+}
+
+.edit-box .notice .notice-text{
+    font-size: 16px;
+    line-height: 24px;
+    color: #999;
+}
+
+.edit-box .cancel-edit-box{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    color: red;
+    cursor: pointer;
+}
+
+/**********check-group\*******/
+.edit-box .check-group{
+     text-align: left;
+    padding: 0px 50px;
+}
+
+.edit-box .check-group span{
+     font-size: 14px;
+     line-height: 1.42857143;
+     color: #333333;
+ }
+
+.edit-box .check-group input[type="checkbox"]{
+    left: -10px;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: 5px;
+}
+
+/**********input-section******/
+.edit-box input[type="file"] {
+    display: none;
+}
+
+.edit-box .custom-file-upload {
+    margin: 10px auto;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+}
+
+.edit-box .custom-file-upload img{
+    width: 100%;
+    max-height: 150px;
+}
+
+.edit-box .custom-file-upload .prompt-text{
+    color: #999;
+    margin-top: -30%;
+    margin-bottom: 15%;
+}
+
+.edit-box .input-section input{
+    width: 100%;
+    height: 30px;
+    margin: 0 auto 10px;
+    border-radius: 0px
+}
+
+.edit-box .input-section .input-items{
+    width:100%;
+    margin:auto;
+}
+
+.edit-box .input-section .input-items div{
+    width:100%;
+    margin:auto
+}
+
+.edit-box .input-section .input-items input{
+    display: inline-block;
+    width: 75%;
+    height: 38px;
+    border: 1px solid #dcdcdc;
+    margin: 0 0 10px ;
+    border-radius: 0px;
+}
+
+.edit-box .input-section .input-items span{
+    display: inline-block;
+    width:25%;
+    line-height: 40px;
+    font-size: 14px;
+    color: #7f7f7f;
+}
+
+.lib0{
+    background: white;
+    padding:20px;
+    width: 90%;
+    display: block;
+    margin-left: 5%;
+}
+
+#last-add-box{
+    width: 100%;
+}
+
+/**********************************************删除组件时使其视觉上不可见**************88*****************************/
+.class-invisible{
+    position:absolute;
+    left:-10000px ;
+}
+
+/****************************************************按钮闪光特效（可有可无）******************************************/
+.save-page,.preview-page {
+    margin: 15px;
+    border-radius: 2px;
+    line-height: 30px;
+    display: inline-block;
+    position: relative;
+    background-color: #4a83dc;
+    border: none;
+    color: white;
+    width:  100px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.save-page::after,.preview-page::after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.6s
+}
+
+.save-page:active::after,.preview-page:active::after {
+    /***从此状态变成上面的状态***/
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+/************************************************vue实例中的动画效果*********************************************/
+.staggered-transition {
+    transition: all .5s ease;
+    overflow: hidden;
+    margin: 0;
+    max-height: 200px;
+}
+
+.staggered-enter, .staggered-leave {
+    opacity: 0;
+    max-height: 0;
+}
+
+/******************************************************滚动条的css*****************************************************/
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear,
+    left bottom,
+    left top,
+    color-stop(0.44, rgb(122,153,217)),
+    color-stop(0.72, rgb(73,125,189)),
+    color-stop(0.86, rgb(28,58,148)));
+}

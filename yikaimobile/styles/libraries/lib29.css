@@ -1,0 +1,23 @@
+/************单列轮播模块********/
+
+.type-29 .prompt-text{
+    color: #999;
+    margin-top: -35%;
+    margin-bottom: 20px
+}
+
+.type-29 .item-group{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin:auto;
+}
+
+.type-29 .input-section{
+    position:relative;
+    box-sizing: content-box;
+    padding:25px;
+    width:240px;
+    outline: #dcdcdc solid 1px;
+    margin: 0px auto 20px auto;
+}

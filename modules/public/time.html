@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    var enterTime = new Date().getTime();
+    window.onbeforeunload = function () {
+        var leaveTime = new Date().getTime();
+        var time = leaveTime - enterTime;
+        return timeSerialize(time);
+    }
+    function timeSerialize(time) {
+        var hour = parseInt(time / 1000 / 3600);
+        var minute = parseInt(time / 1000 % 3600 / 60);
+        var seconds = parseInt(time / 1000 % 3600 % 60);
+        return hour + ':' + minute + ':' + seconds
+    }
+</script>
+<html>

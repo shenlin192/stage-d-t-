@@ -1,0 +1,103 @@
+/*****************商品模块双列***********/
+.type-32 .notice ~div{
+    padding:1px;
+    outline: solid 1px #eee;
+    margin-top:-20px;
+    height:400px;
+    overflow: auto;
+}
+
+.type-32 .edit-zone{
+
+    box-sizing: border-box;
+    width: 530px;
+    padding: 20px;
+    border: 1px solid #e7e7e7;
+    background-color: #f8f8f8;
+    position: relative;
+    margin:20px auto;
+    color: #111111;
+}
+
+.type-32 .style-selector{
+     line-height: 14px;
+     padding-bottom: 20px;
+     margin-bottom: 15px;
+     border-bottom: 1px solid #dcdcdc;
+ }
+
+.type-32 .style-selector label{
+    margin-right:10%;
+}
+
+.type-32 .input-zone{
+    padding:20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.type-32 .input-section{
+    width:45%;
+    margin:auto;
+}
+
+.lib32 {
+    text-align: left;
+    width: 98%;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lib32 .double-col-group{
+     width:49%;
+     margin: auto;
+     background-color: white;
+
+ }
+
+.lib32.no-border{
+    width: 100%;
+}
+
+.lib32 .item-image{
+    position:relative;
+}
+
+.lib32 .item-image img{
+    width: 100%;
+}
+
+.lib32 .item-image .item-sold{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,.5);
+
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 16.5px;
+    margin-bottom: 0;
+}
+
+.lib32 .item-title{
+
+    font-size: 16px;
+    line-height: 17px;
+
+    color: #404040;
+    padding: 13px 13px 0 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lib32 .item-price{
+    font-size: 18px;
+    line-height: 18px;
+
+    color: #ec2222;
+    padding: 5px 13px 13px 13px;
+}

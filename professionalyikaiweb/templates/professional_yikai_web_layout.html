@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>web layout</title>
+    <link rel="stylesheet" href="/{$project_path}/styles/pro_yikai_web_layout.css">
+    <link rel="stylesheet" href="/{$project_path}/styles/jquery-ui.min.css">
+</head>
+<body>
+<div class="side">
+    <div class="side-item"><img class="type1 width1 height1" src="/{$project_path}/images/bg5.jpg" ></div>
+    <div class="side-item"><img class="type2 width1 height2" src="/{$project_path}/images/bg5-s.jpg" ></div>
+    <div class="side-item"><img class="type3 width1 height4" src="/{$project_path}/images/bg5-4.jpg" ></div>
+</div>
+<div class="main">
+    <div class="line" tabindex="-1");></div>
+</div>
+<article id="elementToolbar1" class="elementToolbar">
+
+    <div class="elemBtnBox up" title="上移">
+        <span class="elemBtn"></span>
+        <span class="elemText">上移</span>
+    </div>
+    <div class="elemBtnBox down" title="下移">
+        <span class="elemBtn"></span>
+        <span class="elemText">下移</span>
+    </div>
+    <div class="elemBtnBox delete" title="删除">
+        <span class="elemBtn"></span>
+        <span class="elemText">删除</span>
+    </div>
+
+</article>
+
+</body>
+<script src="/{$project_path}/js/jquery.min.js"></script>
+<script src="/{$project_path}/js/jquery-ui.js"></script>
+<script>
+
+var layoutInfo={$layout_info};
+var row = [];
+$('.type1').data({'width':100,'height':100});
+$('.type2').data({'width':100,'height':50});
+$('.type3').data({'width':100,'height':25});
+$(document).ready(function() {
+    /*====================== 拖拽事件绑定 ==================*/
+    $(".side-item>img").draggable({
+        helper: 'clone',
+        revert: "invalid",
+        scroll: false,
+    });
+    /*====================== 放置事件动态绑定 ==================*/
+    droppable($('.line'));
+    //给每一行绑定放置事件
+    $(".main").on( "drop",".line", function( event,ui ){
+        let newSec = $(ui.helper[0]).clone().removeAttr('style').removeClass('ui-draggable-dragging');
+        let preSec = ui.helper['context'];
+        let line = $(this).index();
+        secData(newSec,preSec);
+        addLine(newSec,line);
+    });
+    //给拖拽的图片添加数据
+    function secData(sec,preSec) {
+        let dataObj = $.extend({}, $(preSec).data());
+        delete dataObj['ui-draggable'];
+        let src = sec[0].src.match(/\/image.+/)[0];
+        $(sec).data(dataObj);
+        $(sec).data({'src':src});
+    }
+    //根据拖拽的
+    function addLine(sec,index) {
+        let lineDiv = $('.line').eq(index);
+        if(index==0 && !row[0] ){
+            row[0] = $.extend({},$(sec).data());
+            row[0].y = 0;
+        }else{
+            let newLine =  $('<div class="line"></div>').attr("tabindex","-1");
+            newLine.insertAfter($(lineDiv));
+            droppable(newLine);
+            index++;
+            row.splice(index,0,{});
+            row[index] = $.extend(row[index],$(sec).data());
+            rowY();
+            lineDiv = $('.line').eq(index);
+        }
+        $(sec).appendTo(lineDiv);
+        $(lineDiv).css('height',$(sec).data('height') + 'vh');
+        setBottom(row)
+    }
+    function droppable(element) {
+        element.droppable({
+            accept: ".side-item>img",
+            tolerance: "pointer",
+            activate: function( event, ui ) {
+                let w =  $(ui.helper['context']).data('width');
+                $(ui.helper).css('width',0.7 * w + 'vw');
+            }
+        })
+    }
+
+    /*====================== 菜单点击 ==================*/
+    $(".main").on( "click",".line img", function( event ) {
+        event.stopPropagation();
+        //1 强制触发 focus 事件
+        let lineDiv = $(this).parent()[0];
+        $(lineDiv).trigger('focus');
+        // 以后这里要根据elementType来确定使用那个编辑框（现在暂定都使用elementToolbar1）
+        // 弹出对应的编辑菜单
+        $('#elementToolbar1').show().offset({
+            left:event.pageX,
+            top:event.pageY-40
+        }).data('storeId',$(lineDiv).index());
+    });
+    $('.side').on('click',function (evevt) {
+        deletrius();
+    });
+    $(".main").scroll(function() {
+        deletrius();
+    });
+    function toolBar() {
+        var swapItems = function(arr, index1, index2) {
+            arr[index1] = arr.splice(index2, 1, arr[index1])[0];
+            return arr;
+        };
+        $('#elementToolbar1').on('click','.delete',function(event){
+            //点击了删除按钮
+            console.log('hi')
+            event.stopPropagation();
+            let index = $($(this).parent()[0]).data('storeId');
+            $('.line').eq(index).detach();
+            row.splice(index,1);
+            rowY();
+            if($('.main').children().length == 0){
+                let newLine = $('<div class="line"></div>').attr("tabindex","-1");
+                newLine.appendTo('.main');
+                droppable(newLine);
+            }else{
+                setBottom(row);
+            }
+            deletrius();
+        }).on('click','.up',function(){
+            //点击了上移按钮
+            let index = $($(this).parent()[0]).data('storeId');
+            let lineDiv = $('.line').eq(index)[0];
+            if(index != 0 ){
+                $(lineDiv).after($($('.line').eq(index-1))[0]);
+                swapItems(row, index, index - 1);
+                rowY();
+                setBottom(row);
+            }else{
+                alert('已经到顶啦！')
+            }
+            deletrius();
+        }).on('click','.down',function(){
+            //点击了下移按钮
+            let index = $($(this).parent()[0]).data('storeId');
+            let lineDiv = $('.line').eq(index)[0];
+            if(index != row.length-1 ){
+                $(lineDiv).before($($('.line').eq(index+1))[0]);
+                swapItems(row, index, index + 1);
+                rowY();
+                setBottom(row);
+            }else{
+                alert('已经到底啦！')
+            }
+            deletrius();
+        });
+    }
+    toolBar();
+
+    /*====================== 公用函数 ==================*/
+    function setBottom(row) {
+        let PaddingBottom = 100-row[row.length-1].height-row[row.length-1].y;
+        let preDiv = $('.main').data('preDiv');
+        if(preDiv){
+            $(preDiv).css('padding-bottom',0 );
+        }
+        if(PaddingBottom >= 0){
+            let lastLine = $('.line').eq(row.length-1);
+            $(lastLine[0]).css('padding-bottom',PaddingBottom + 'vh');
+            $('.main').data({'preDiv':lastLine[0]});
+        };
+    }
+    function rowY() {
+        if(row[0]){
+            row[0].y = 0;
+            for(let i = 1; i<row.length; i++){
+                row[i].y = row[i-1].y + row[i-1].height;
+            }
+        }
+    }
+    //消隐无踪
+    function deletrius(){
+        $('#elementToolbar1').hide();
+    }
+});
+    //用于更新数据库
+    function post_ajax(layoutInfo){
+        $.post('update_layout_info.php', {
+            layout_info:layoutInfo
+        }, function (result) {
+            if (result) {
+               alert('successful');
+            }
+        })
+    }
+</script>
+</html>

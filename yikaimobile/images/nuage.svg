@@ -1,0 +1,48 @@
+<svg width="1880" height="800" xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <title>background</title>
+        <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1" />
+    </g>
+    <g>
+        <title>Layer 1</title>
+        <g id="svg_1">
+            <animateMotion path="M0,0 40,-10  0,-20  40,-30 0,-40  40,-30   0,-20 40,-10 0,0" begin="0s" dur="26s" repeatCount="indefinite" />
+            <animate id="appear" attributeName="opacity" from="0" to="0.5" begin="0;disappear.end" dur="13s" fill="freeze"/> 
+            <animate id="disappear" attributeName="opacity" from="0.5" to="0" begin="0;appear.end" dur="13s" fill="freeze"/>
+          
+           
+            <path id="svg_1" d="m672.406,425.911c-1.98,0.626 -3.885,1.546 -5.672,2.691c-2.547,-13.38 -14.942,-20.231 -29.859,-15.518c-16.76,5.295 -30.347,23.173 -30.347,39.934c0,2.101 0.214,4.084 0.62,5.936c-0.983,0.058 -2.008,-0.104 -3.071,0.232c-6.024,1.903 -11.028,7.639 -12.092,13.529l18.962,-5.99l5.222,-1.65l38.301,-12.099l8.333,-2.632l27.539,-8.699c0.252,-1.468 0.386,-2.25 0.386,-3.536c-0.001,-10.12 -8.204,-15.395 -18.322,-12.198z" fill="lightblue" opacity="0.5" transform="translate(500,-40)"/>
+              
+        </g>
+
+
+
+        <g id="svg_2">
+           <animateMotion path="M0,0 40,-10  0,-20  40,-30 0,-40  40,-30   0,-20 40,-10 0,0" begin="0s" dur="25s" repeatCount="indefinite" />
+            <animate id="appear" attributeName="opacity" from="0.2" to="0.8" begin="0;disappear.end" dur="13s" fill="freeze"/> 
+            <animate id="disappear" attributeName="opacity" from="0.8" to="0.2" begin="0;appear.end" dur="13s" fill="freeze"/>
+           
+            <path id="svg_2" d="m914.406,461.911c-1.98,0.626 -3.885,1.546 -5.672,2.691c-2.547,-13.38 -14.942,-20.231 -29.859,-15.518c-16.76,5.295 -30.347,23.173 -30.347,39.934c0,2.101 0.214,4.084 0.62,5.936c-0.983,0.058 -2.008,-0.104 -3.071,0.232c-6.024,1.903 -11.028,7.639 -12.092,13.529l18.962,-5.99l5.222,-1.65l38.301,-12.099l8.333,-2.632l27.539,-8.699c0.252,-1.468 0.386,-2.25 0.386,-3.536c-0.001,-10.12 -8.204,-15.395 -18.322,-12.198z" fill="lightblue" opacity="0.5" />
+        </g>
+
+
+
+        <g id="svg_3">
+            <!--从左向右的曲线-->
+            <!--animateMotion path="M30,0 C200,100 400,-100 600,20 S800,100 1000,0 S1200,-100 1400,0 S1600,50 1800,0" begin="0s" dur="26s" repeatCount="indefinite" /-->
+            <animateMotion path="M0,0 40,-10  0,-20  40,-30 0,-40  40,-30   0,-20 40,-10 0,0" begin="0s" dur="22s" repeatCount="indefinite" />
+             <animate id="appear" attributeName="opacity" from="0.2" to="0.8" begin="0;disappear.end" dur="11s" fill="freeze"/> 
+            <animate id="disappear" attributeName="opacity" from="0.8" to="0.2" begin="0;appear.end" dur="11s" fill="freeze"/>
+            <path id="svg_3" d="m505.406,498.911c-1.98,0.626 -3.885,1.546 -5.672,2.691c-2.547,-13.38 -14.942,-20.231 -29.859,-15.518c-16.76,5.295 -30.347,23.173 -30.347,39.934c0,2.101 0.214,4.084 0.62,5.936c-0.983,0.058 -2.008,-0.104 -3.071,0.232c-6.024,1.903 -11.028,7.639 -12.092,13.529l18.962,-5.99l5.222,-1.65l38.301,-12.099l8.333,-2.632l27.539,-8.699c0.252,-1.468 0.386,-2.25 0.386,-3.536c-0.001,-10.12 -8.204,-15.395 -18.322,-12.198z" fill="lightblue" opacity="0.5" transform="translate(-200)" />
+        </g>
+
+        
+        <g id="svg_4">
+            <animateMotion path="M0,0 40,-10  0,-20  40,-30 0,-40  40,-30   0,-20 40,-10 0,0" begin="0s" dur="28s" repeatCount="indefinite" />
+            <animate id="appear" attributeName="opacity" from="0.2" to="0.8" begin="0;disappear.end" dur="14s" fill="freeze"/> 
+            <animate id="disappear" attributeName="opacity" from="0.8" to="0.2" begin="0;appear.end" dur="14s" fill="freeze"/>
+            <path id="svg_4" d="m627.406,197.911c-1.98,0.626 -3.885,1.546 -5.672,2.691c-2.547,-13.38 -14.942,-20.231 -29.859,-15.518c-16.76,5.295 -30.347,23.173 -30.347,39.934c0,2.101 0.214,4.084 0.62,5.936c-0.983,0.058 -2.008,-0.104 -3.071,0.232c-6.024,1.903 -11.028,7.639 -12.092,13.529l18.962,-5.99l5.222,-1.65l38.301,-12.099l8.333,-2.632l27.539,-8.699c0.252,-1.468 0.386,-2.25 0.386,-3.536c-0.001,-10.12 -8.204,-15.395 -18.322,-12.198z" fill="lightblue" opacity="0.5" transform="translate(100)"/>
+        </g>
+        
+    </g>
+</svg>

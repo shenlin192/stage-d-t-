@@ -1,0 +1,398 @@
+/***************************************************初始化设置********************************************************/
+html{
+    height:100%;
+}
+
+body{
+   /* background-color: #e3e2e2;*/
+    height:100%;
+    overflow-x: hidden;
+
+
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+
+    animation: animatedBackground 10s linear infinite;
+
+}
+
+@keyframes animatedBackground {
+    from { background-position: 0 0; }
+    to { background-position: 100% 0; }
+}
+
+/**************************************************general setting*****************************************************/
+.lib0{
+    margin:2% 0;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+#head-bg{
+    background-image: url(http://wd.geilicdn.com/vshop-default-front-cover4.jpg?w=640&amp;h=330&amp;cp=1);
+    height: 40vw;
+    max-height: 50vh;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    overflow: hidden;
+
+}
+
+.head_nav{
+    position: fixed;
+    z-index:1;
+    background: #f7f7f7;
+
+}
+
+.head_nav img{
+    width:8%
+}
+
+.avatar{
+    display: flex;
+    background:#fff;
+    padding: 2%;
+    margin: 0;
+}
+
+.avatar span{
+    margin: auto 0px auto 60%;
+    font-size: large;
+}
+
+.avatar img{
+    width: 55px;
+    height: 55px;
+}
+
+#main{
+    margin-bottom:100px ;
+}
+
+#bottomNavbar{
+    position: fixed;
+    margin: 0;
+    bottom:0px;
+    border-radius: 0;
+    z-index: 3;
+    background:#fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+#topNavbar{
+    position: fixed;
+    margin: 0;
+    top:0px;
+    border-radius: 0;
+}
+
+.row{
+    margin-bottom: 5vh;
+    padding-top: 100px;
+    margin-top:-100px;
+}
+
+/*****************************************对于各个子组件的css设置**************************************************/
+/*.lib12,.lib13,.lib14,.lib15,.lib21,.lib22,.lib23,.lib24,.lib25,.lib26,.lib29,.lib31,.lib32{
+    margin-bottom: 2%;
+}*/
+
+.lib12{
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+    text-align: left;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+}
+
+.lib12 img{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.lib12 span{
+    margin-left: 15vw;
+}
+
+/******************辅助线模块*********************/
+.lib13 .auxiliary-line-container{
+    background: transparent ;
+    padding: 2%  0;
+}
+
+.lib13 .auxiliary-line{
+    background:#bbb;
+    width:95% ;
+    height: 1px;
+    margin:auto;
+}
+
+/******************地图模块**********************/
+.lib15 #allmap{
+    height: 300px;
+    width: 100%;
+    overflow:hidden;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+/******************文字导航**********************/
+.lib21{
+    text-align: left;
+    background: white;
+    padding: 20px;
+    display: block;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+/******************图片导航**********************/
+.lib22{
+    background:#fff;
+    padding:5px;
+    margin:0 auto;
+    display: flex;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+    width:100%
+}
+
+.lib22 .show-box{
+    width: 22%;
+    margin:auto;
+}
+
+.lib22 .show-box a{
+    padding:0 5px 5px 5px;
+    margin:0 10px 10px 0;
+    text-decoration:none;
+    display:inline-block;
+    border:1px solid #DDD;
+    border-radius:3px;
+}
+
+.lib22 .show-box img{
+    border:0;
+    height:200px;
+}
+
+/******************公众号标题********************/
+.lib23{
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+    text-align: left;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+    padding: 20px 12px;
+}
+
+.lib23 .title{
+    font-size: 24px;
+    color: #404040;
+    line-height: 30px;
+    margin-bottom: 3px;
+}
+
+.lib23 .footer{
+    font-size: 16px;
+    line-height: 22.5px;
+}
+
+.lib23 .footer .date{
+    color: #9a9a9a;
+}
+
+.lib23 .footer .author{
+    color: #9a9a9a;
+}
+
+.lib23 .footer .linkTitle{
+    color: #32518d;
+}
+
+/****************文字模块模板*******************/
+.lib24{
+
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+    width: 100%;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+   /* background: linear-gradient(330deg, #e05252 0%, #99e052 25%, #52e0e0 50%, #9952e0 75%, #e05252 100%);*/
+    padding: 2%;
+}
+
+.lib24 img{
+    max-width: 100%;
+}
+
+.lib24 video{
+    width:100%
+}
+
+/******************单列大图*********************/
+.lib25{
+    background:#fff;
+    padding:10px;
+    width:100%;
+    margin:auto;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.lib25 .show-box{
+    width:100%;
+    margin: auto;
+}
+
+.lib25 .show-box.showPadding{
+    padding:10px;
+}
+
+.lib25 .show-box img{
+    width:100%
+}
+
+/*****************双列大图************************/
+.lib26{
+    background:#fff;
+    padding:10px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.lib26 .img-group{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lib26 .item{
+    width:50%;
+    margin:auto;
+}
+
+.lib26 .showPadding .item{
+    padding:5px
+}
+
+.lib26 .item img{
+    width: 100%;
+    height: 30vh;
+}
+
+/***************************轮播******************************/
+.lib29 img{
+    min-height: 20vw;
+    max-height: 40vw;
+    margin: auto;
+}
+
+/************************商品模块单列*************************/
+.lib31{
+    text-align: left;
+    width: 70%;
+    margin:auto;
+    background: white;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.lib31.no-border{
+    width: 100%;
+}
+
+.lib31 .item-image{
+    position:relative;
+}
+
+.lib31 .item-image img{
+    width: 100%;
+}
+
+.lib31 .item-image .item-sold{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,.5);
+
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 16.5px;
+    margin-bottom: 0;
+}
+
+.lib31 .item-title{
+
+    font-size: 16px;
+    line-height: 17px;
+
+    color: #404040;
+    padding: 13px 13px 0 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lib31 .item-price{
+    font-size: 18px;
+    line-height: 18px;
+
+    color: #ec2222;
+    padding: 5px 13px 13px 13px;
+}
+
+/************************商品模块两列*************************/
+.lib32 {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lib32 .double-col-group{
+    width:49%;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+
+}
+
+.lib32.no-border{
+    width: 100%;
+}
+
+.lib32 .item-image{
+    position:relative;
+}
+
+.lib32 .item-image img{
+    width: 100%;
+    height:30vh;
+}
+
+.lib32 .item-image .item-sold{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,.5);
+
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 16.5px;
+    margin-bottom: 0;
+}
+
+.lib32 .item-title{
+
+    font-size: 16px;
+    line-height: 17px;
+
+    color: #404040;
+    padding: 13px 13px 0 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lib32 .item-price{
+    font-size: 18px;
+    line-height: 18px;
+
+    color: #ec2222;
+    padding: 5px 13px 13px 13px;
+}
+
+/**********************************************************************************************************************/

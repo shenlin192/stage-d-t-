@@ -1,0 +1,87 @@
+/********************商品模块大图*****************/
+.type-31 .notice~div{
+    padding:1px;
+    outline: solid 1px #eee;
+    margin-top:-20px;
+    height:400px;
+    overflow: auto;
+}
+
+.type-31 .edit-zone{
+    box-sizing: border-box;
+    width: 530px;
+    padding: 20px;
+    border: 1px solid #e7e7e7;
+    background-color: #f8f8f8;
+    position: relative;
+     margin:20px auto;
+    color: #111111;
+}
+
+.type-31 .style-selector{
+    line-height: 14px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dcdcdc;
+    margin:10px;
+}
+
+.type-31 .style-selector label{
+    margin-right:10%;
+}
+
+.type-31 .input-section{
+    width:300px;
+    margin:auto;
+}
+
+.lib31{
+    text-align: left;
+    width: 95%;
+    margin:auto;
+    background: white;
+}
+
+.lib31.no-border{
+    width: 100%;
+}
+
+.lib31 .item-image{
+    position:relative;
+}
+
+.lib31 .item-image img{
+    width: 100%;
+}
+
+.lib31 .item-image .item-sold{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,.5);
+
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 16.5px;
+    margin-bottom: 0;
+}
+
+.lib31 .item-title{
+
+    font-size: 16px;
+    line-height: 17px;
+
+    color: #404040;
+    padding: 13px 13px 0 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lib31 .item-price{
+    font-size: 18px;
+    line-height: 18px;
+
+    color: #ec2222;
+    padding: 5px 13px 13px 13px;
+}

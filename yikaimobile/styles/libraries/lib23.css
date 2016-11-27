@@ -1,0 +1,65 @@
+/****************公众号标题******************/
+.type-23 .input-section{
+    text-align: left;
+}
+
+.type-23 .input-section span{
+    width:80px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #7f7f7f;
+    display: inline-block;
+}
+
+.type-23 .input-section input{
+    display: inline-block;
+    width:80%;
+    height: 38px;
+    border: 1px solid #dcdcdc;
+    margin: 0 auto 10px;
+    border-radius: 0px;
+}
+
+.type-23 .input-section div:nth-of-type(2) input {
+    width:40%;
+}
+
+.type-23 .input-section div:nth-of-type(3) input {
+    width:40%;
+}
+
+.type-23 .input-section div:nth-of-type(5) input
+{
+    position: relative;
+    left: 80px;
+}
+
+.lib23{
+    text-align: left;
+    background-color: #fff;
+    padding: 20px 12px;
+}
+
+.lib23 .title{
+    font-size: 24px;
+    color: #404040;
+    line-height: 30px;
+    margin-bottom: 3px;
+}
+
+.lib23 .footer{
+    font-size: 16px;
+    line-height: 22.5px;
+}
+
+.lib23 .footer .date{
+    color: #9a9a9a;
+}
+
+.lib23 .footer .author{
+    color: #9a9a9a;
+}
+
+.lib23 .footer .linkTitle{
+    color: #32518d;
+}

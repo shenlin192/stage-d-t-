@@ -1,0 +1,24 @@
+/**************地图*************/
+.lib15 img{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.type-15 .input-group{
+    padding:20px;
+
+}
+
+.type-15 .input-group div{
+    display: inline-block;
+    color: #999;
+}
+
+.type-15 .input-group input[type="button"]{
+    border-radius: 0;
+    background: #4a83dc;
+    color:white;
+    margin-left:10% ;
+}

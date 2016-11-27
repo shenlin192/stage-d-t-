@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>preview</title>
+    <link rel="stylesheet" type="text/css" href="/{$project_path}/styles/jquery.fullPage.css">
+    <link rel="stylesheet" type="text/css" href="/{$project_path}/styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/{$project_path}/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="/{$project_path}/styles/yikaiweb.css">
+
+    <script src="/{$project_path}/js/jquery.min.js"></script>
+    <script src="/{$project_path}/js/bootstrap.min.js"></script>
+    <script src="/{$project_path}/js/jquery.fullPage.js"></script>
+</head>
+
+<body>
+
+<div class="yk-nav">
+    <div class="center-wrap clearfix">
+        <div class="center-wrap clearfix">
+            <h2 class="yk-logo" id="nav1"></h2>
+            <p class="yk-link">
+                <a href="javascript:" id="nav2"></a>
+                <a href="javascript:" id="nav3"></a>
+                <a href="javascript:" id="nav4"></a>
+                <a href="javascript:" id="nav5"></a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="fullPage">
+
+    <section id="header" class="section header fp-auto-height active">
+        <div class="center-wrap clearfix">
+            <h1 class="logo"><a id="logo1" class="editable-logo">yikai</a></h1>
+            <ul class="nav">
+                <li>
+                    <span class="dropdown-toggle" id="headerText1"></span>
+                    <ul class="dropdown-menu">
+                        <li><span  id="headerLink1"></span></li>
+                        <li><span  id="headerLink2"></span></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span class="dropdown-toggle" id="headerText2"></span>
+                    <ul class="dropdown-menu">
+                        <li><span id="headerLink3"></span></li>
+                        <li><span  id="headerLink4"></span></li>
+                        <li><span  id="headerLink5"></span></li>
+                    </ul>
+                </li>
+
+                <li >
+                    <span class="dropdown-toggle" id="headerText3"></span>
+                    <ul class="dropdown-menu">
+                        <li><span id="headerLink6"></span></li>
+                        <li><span id="headerLink7"></span></li>
+                        <li><span id="headerLink8"></span></li>
+                    </ul>
+                </li>
+
+                <li >
+                    <span class="dropdown-toggle" id="headerText4"></span>
+                    <ul class="dropdown-menu">
+                        <li><span id="headerLink9"></span></li>
+                        <li><span id="headerLink10"></span></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span class="dropdown-toggle" id="headerText5"></span>
+                    <ul class="dropdown-menu">
+                        <li><span id="headerLink11"></span></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id='section1' class="section page1">
+
+        <div id = 'slide1' class="slide">
+        </div>
+
+        <div id = 'slide2' class="slide">
+        </div>
+
+        <div id = 'slide3' class="slide">
+        </div>
+
+    </section>
+
+    <section id='section2' class="section page2">
+        <div class="center-wrap">
+            <div class="desc page2-desc">
+                <h1 id="head2">14 万分，快得有点狠</h1>
+                <p id="p3">CPU 性能翻倍的骁龙 820 处理器，提速 87% 的 UFS 闪存，快 40% 的 Adreno 530 图形引擎，快 100% 的双通道 LPDDR4，Antutu 跑分性能测试高达惊人的 14 万分。</p>
+            </div>
+
+            <div class="multimedia" id="video1">
+                <iframe width="420" height="300"
+                        src="">
+                </iframe>
+            </div>
+
+            <ul class="side-text side-text-b">
+                <li>
+                    <span id="span1" class="side-title webfont">
+
+                    </span>
+                    <p id='p4' class="side-cont">旗舰处理器</p>
+                </li>
+
+                <li class="mid">
+                    <span id="span2" class="side-title webfont">
+
+                    </span>
+                    <p id='p5' class="side-cont">可选最大内存</p>
+                </li>
+                <li>
+                    <span id="span3" class="side-title webfont">
+
+                    </span>
+                    <p id='p6' class="side-cont">可选最大闪存</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id='section3' class="section page3">
+        <div class="center-wrap">
+            <div class="desc page3-desc">
+                <h1 id="head3">129克，手感轻得不真实</h1>
+                <p id="p7">5.15" 大屏幕，整机仅 129 克。<br>
+                    还有 3D 纤细侧腰，曲面玻璃的温润手感。握在手中的一刻，仿佛轻轻握住整个世界的倒影。</p>
+            </div>
+            <div class="multimedia" id="audio1">
+                <audio class='audio' controls="controls" src="">
+                </audio>
+            </div>
+
+        </div>
+    </section>
+
+    <section id='section4' class="section page4">
+        <div class="center-wrap">
+            <div class="desc page4-desc">
+                <h1 id="head4">5.5 英寸 1080P 全贴合屏幕</h1>
+                <p id="p8">5.5 英寸 1080P Full HD 屏幕，IGZO 显示技术可让每台手机都有高度统一的出色表现，也具备绝佳的低功耗特性。403PPI 带来细腻的视觉体验，对比度高达 1000：1。屏幕亮度则为 450cd/m²，户外强光下依旧清晰可见。GFF 全贴合，避免反光影响，屏显透彻。</p>
+                <ul class="parameters-list">
+                    <li><h2 id="head5">403</h2><span>PPI</span></li>
+                    <li><h2 id="head6">1000 : 1</h2><span>对比度</span></li>
+                    <li><h2 id="head7">450cd/m²</h2><span>亮度</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section footer fp-auto-height">
+        <div class="footer-link">
+            <div class="center-wrap">
+                <div class="clearfix">
+                    <dl>
+                        <dt id="footerTitle1"></dt>
+                        <dd><span id="footerText1"></span></dd>
+                        <dd><span id="footerText2"></span></dd>
+                    </dl>
+
+                    <dl>
+                        <dt id="footerTitle2"></dt>
+                        <dd><span id="footerText3"></span></dd>
+                        <dd><span id="footerText4"></span></dd>
+                        <dd><span id="footerText5"></span></dd>
+                    </dl>
+
+                    <dl>
+                        <dt id="footerTitle3"></dt>
+                        <dd id="footerText6"></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright center-wrap">
+            <p id='p9'></p>
+        </div>
+
+        <!--这段div 只用于占位-->
+        <div style="height: 60px">
+
+        </div>
+
+    </section>
+
+</div>
+
+<script>
+    /*********************************************从后台获取数据*************************************************/
+    var pageInfo={$simplified_page_info};
+    var pageInfo={$simplified_page_info};
+
+    var projectPath='/'+{$project_path_js};
+
+    var [sectionArray,paragraphArray,headerArray,
+        slideArray,headerTextArray,navTextArray,
+        logoArray,spanArray,footerTitleArray,
+        footerTextArray,headerLinkArray,audioArray
+        ,videoArray]=bumbleBee(pageInfo);
+
+
+    /*********************************************对页面进行初始化*************************************************/
+    $(document).ready(function(){
+        for(let i=0;i<sectionArray.length;i++){
+            $('#'+sectionArray[i]['elementId']).css('background-image', `url(${projectPath}${sectionArray[i]['imgUrl1']})`)
+        }
+        for(let i=0;i<paragraphArray.length;i++){
+            $('#'+paragraphArray[i]['elementId']).html(paragraphArray[i]['text']).addClass('editableText');
+        }
+        for(let i=0;i<headerArray.length;i++){
+            $('#'+headerArray[i]['elementId']).html(headerArray[i]['text']).addClass('editableText');
+        }
+        for(let i=0;i<slideArray.length;i++){
+            $('#'+slideArray[i]['elementId']).css('background-image', `url(${projectPath}${slideArray[i]['imgUrl1']})`)
+            $('#'+slideArray[i]['elementId']).append('<a target="_black" href="'+ slideArray[i]['itemUrl1'] +'"></a>')
+        }
+        for(let i=0;i<headerTextArray.length;i++){
+            $('#'+headerTextArray[i]['elementId']).html(headerTextArray[i]['text']).addClass('editableText');
+        }
+        for(let i=0;i<navTextArray.length;i++){
+            $('#'+navTextArray[i]['elementId']).html(navTextArray[i]['text']).addClass('editableText-without-link');
+        }
+        for(let i=0;i<logoArray.length;i++){
+            $('#'+logoArray[i]['elementId']).css('background-image', `url(${projectPath}${logoArray[i]['imgUrl1']})`);
+        }
+        for(let i=0;i<spanArray.length;i++){
+            $('#'+spanArray[i]['elementId']).html(spanArray[i]['text']).addClass('editableText');
+        }
+        for(let i=0;i<footerTitleArray.length;i++){
+            $('#'+footerTitleArray[i]['elementId']).html(footerTitleArray[i]['text']).addClass('editableText');
+        }
+        for(let i=0;i<footerTextArray.length;i++){
+            $('#'+footerTextArray[i]['elementId']).html(footerTextArray[i]['text']).addClass('editableText');
+        }
+        for(let i=0;i<headerLinkArray.length;i++){
+            $('#'+headerLinkArray[i]['elementId']).html(headerLinkArray[i]['text']).addClass('editableText');
+        }
+        for(let i=0;i<audioArray.length;i++){
+            $('#'+audioArray[i]['elementId']).find('audio').attr('src',projectPath+audioArray[i]['itemUrl1']);
+        }
+        for(let i=0;i<videoArray.length;i++){
+            $('#'+videoArray[i]['elementId']).find('iframe').attr('src',videoArray[i]['itemUrl1']);
+        }
+
+
+        //首先隐藏所有编辑框
+        $('.edit-box').hide();
+
+        //点击关闭，隐藏编辑窗
+        $('.cancel-edit-box').on('click',function(){
+            $('.edit-box').hide();
+        });
+
+        //fullPage.js functionality
+        $(function(){
+            var $ykNav = $('.yk-nav');
+            $('#fullPage').fullpage({
+                verticalCentered: false,
+                navigation: true,
+                onLeave: function(index, nextIndex, direction){
+                    //隐藏编辑框
+
+                    //离开的那一页对应的导航样式设置
+                    $('.yk-link').children().eq(index-2).css({
+                        'color':'#515151',
+                        'border-bottom':'5px solid transparent'
+                    });
+
+                    if(index == 2 && direction == 'up'){
+                        $ykNav.animate({  //当前页面是2，运动方向向上，执行以下代码，调整nav栏位置
+                            top: -80
+                        }, 680);
+                        $(".right").css('display','none');
+                    } else if(index == 1 && direction == 'down') {
+                        $ykNav.animate({
+                            top: 0
+                        }, 400);
+                        $(".right").css('display','block');
+                    }
+                    else {
+                        $ykNav.animate({
+                            top: 0
+                        }, 400);
+                    }
+                },
+                afterLoad: function(anchorLink, index){
+                    //进入的那一页对应的导航的设置
+                    if(index-2>=0){
+                        $('.yk-link').children().eq(index-2).css({
+                            'color':'#31a5e7',
+                            'border-bottom':'5px solid #31a5e7'
+                        });
+                    }
+                }
+            });
+
+            //slide 向右滑动6秒一次
+            setInterval(function(){
+                $.fn.fullpage.moveSlideRight();
+            },6000);
+            //点击事件
+            $('.yk-link').children().click(function(event){
+                event.stopPropagation();
+                $.fn.fullpage.moveTo($(this).index()+2);
+            });
+        });//end of full page initialization
+
+        //bootstrap下拉菜单改hover
+        $(function(){
+            $('.dropdown-toggle').dropdownHover();
+        });
+    });//end of document initialization
+
+    //bootstrap下拉菜单改hover
+    (function($, window, undefined) {
+        // outside the scope of the jQuery plugin to
+        // keep track of all dropdowns
+        var $allDropdowns = $();
+
+        // if instantlyCloseOthers is true, then it will instantly
+        // shut other nav items when a new one is hovered over
+        $.fn.dropdownHover = function(options) {
+
+            // the element we really care about
+            // is the dropdown-toggle's parent
+            $allDropdowns = $allDropdowns.add(this.parent());
+
+            return this.each(function() {
+                var $this = $(this).parent(),
+                        defaults = {
+                            delay: 500,
+                            instantlyCloseOthers: true
+                        },
+                        data = {
+                            delay: $(this).data('delay'),
+                            instantlyCloseOthers: $(this).data('close-others')
+                        },
+                        options = $.extend(true, {}, defaults, options, data),
+                        timeout;
+
+                $this.hover(function() {
+                    if(options.instantlyCloseOthers === true)
+                        $allDropdowns.removeClass('open');
+
+                    window.clearTimeout(timeout);
+                    $(this).addClass('open');
+                }, function() {
+                    timeout = window.setTimeout(function() {
+                        $this.removeClass('open');
+                    }, options.delay);
+                });
+            });
+        };
+
+        $('[data-hover="dropdown"]').dropdownHover();
+    })(jQuery, this);
+
+    //transformer
+    //transformer
+    function bumbleBee(pageInfo){
+        return [
+            pageInfo.filter((item)=>item['typeId']==1),
+        pageInfo.filter((item)=>item['typeId']==2),
+        pageInfo.filter((item)=>item['typeId']==3),
+        pageInfo.filter((item)=>item['typeId']==4),
+        pageInfo.filter((item)=>item['typeId']==5),
+        pageInfo.filter((item)=>item['typeId']==6),
+        pageInfo.filter((item)=>item['typeId']==7),
+        pageInfo.filter((item)=>item['typeId']==8),
+        pageInfo.filter((item)=>item['typeId']==9),
+        pageInfo.filter((item)=>item['typeId']==10),
+        pageInfo.filter((item)=>item['typeId']==11),
+        pageInfo.filter((item)=>item['typeId']==12),
+        pageInfo.filter((item)=>item['typeId']==13),
+    ]
+    }
+
+</script>
+</body>
+</html>

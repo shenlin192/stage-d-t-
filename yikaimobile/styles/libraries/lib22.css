@@ -1,0 +1,41 @@
+/****************图片导航模块****************/
+
+.type-22 .item-group{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.type-22 .input-section{
+    position:relative;
+    box-sizing: content-box;
+    padding:20px;
+    width:240px;
+    outline: #dcdcdc solid 1px;
+    margin: 0px auto 20px auto;
+}
+
+.lib22{
+    width: 100%;
+    display: block;
+}
+
+.lib22 .show-box{
+    position:relative;
+    width: 25%;
+    float: left;
+}
+
+.lib22 img{
+    width: 100%;
+    height: 71px;
+    padding: 0 2px 0 2px;
+}
+
+.lib22 a {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+}

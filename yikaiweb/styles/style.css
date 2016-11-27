@@ -1,0 +1,78 @@
+body, div, h1, h2, h3, h4, h5, h5, p, ul, ol, li, dl, dt, dd, span, a { margin: 0; padding: 0;}
+ul, ol { list-style-type: none;}
+body { font: 14px "Microsoft Yahei",Arial,Helvetica,sans-serif; color: #515151;}
+a { color: #515151; text-decoration: none;}
+a:focus, a:hover {  color: #31a5e7;  text-decoration: blink;  }
+
+.clearfix:after { content: ""; display: table; clear: both;}
+
+.fp-controlArrow.fp-prev{left: 30px;}
+.fp-controlArrow.fp-next{right: 30px;}
+#fp-nav ul li a.active span{width: 13px; height: 13px;}
+
+.yk-nav { position: fixed; top:-80px; left: 0; z-index: 10; width: 100%; background-color: rgba(255, 255, 255, 0.85);}
+h2.yk-logo { float: left; width: 126px;  margin: 8px 0;line-height: 50px; font-size:18px;}
+.yk-link { float: right; margin: 8px 0; font-size: 0;}
+.yk-link a { display: inline-block; padding: 0 15px; font-size: 14px;line-height: 50px;}
+
+.center-wrap { position: relative; z-index: 1; width: 70%; height: 100%; margin: 0 auto;}
+.desc { position: relative; z-index: 1;}
+
+#header{overflow: visible;  z-index:20;}
+#header span:hover a{color: #31a5e7;  }
+#header .dropdown-menu{text-align: center; min-width: inherit}
+.section { overflow: hidden;}
+.section h1 { margin-bottom: 20px; line-height: 1.4; font-size: 40px; font-weight: 400;}
+.section p { line-height: 25px;}
+
+
+.section .logo { float: left; margin: 0; padding: 0;}
+
+.logo a { float: left; width: 80px; height: 80px; font-size: 0;background-repeat: no-repeat; background-size: contain}
+.nav {float: right;}
+.nav li {float: left;}
+#header .nav>li>span { display: block; padding: 30px 22px 10px;}
+.dropdown-menu{border-radius: inherit}
+.dropdown-menu>li>span {  display: block;  padding: 3px 20px;  clear: both;
+	font-weight: 400;  line-height: 1.42857143;  color: #333;  white-space: nowrap;  }
+
+.login { position: absolute; right: 0; top: 31px;}
+.login a { margin: 0 5px; padding-top: 31px;}
+
+.section,.slide{background-size: cover;}
+.slide a{  width:100%;  height:100%;  display: block;}
+
+.page2 { color: #FFF;}
+.page2-desc { width: 600px; margin: 0 auto; top: 15%; text-align: center;}
+.side-text {width: 755px; left: 50%; margin-left: -376px; bottom: 7%; list-style-type: none; padding: 0;
+	color: #bdbdbd; position: absolute;}
+.side-text li{display: list-item; float: left; width: 250px; text-align: center;  border-right: 1px solid #bdbdbd; }
+.side-text li:last-child{border: none;}
+.side-text li span{font-size: 36px; }
+.side-text li p{font-size: 18px; margin-top: 10px;}
+
+.page3-desc { height: 164px; width: 810px; top:50%; left: 50%; margin-top: -82px; margin-left: -405px;
+	position: absolute; text-align: center; }
+.page3-desc h1{font-size: 36px; line-height: 50px;}
+.page3-desc p{font-size: 16px; line-height: 28px; margin-top: 15px; margin-bottom: 10px; color: #111;}
+
+.page4-desc { position: relative; width: 540px; padding-top: 100px; z-index: 1;}
+.parameters-list { margin-top: 28px; width: 230px;}
+.parameters-list li { position: relative; border-top: #333 1px solid; border-bottom: #333 1px solid; margin-bottom: -1px;}
+.parameters-list li h2 { font-size: 32px; font-weight: 400; height: 80px; line-height: 80px; margin-top: 0!important;}
+.parameters-list li i { display: inline-block; position: absolute; top: 66px; font-size: 12px;}
+.parameters-list li span { position: absolute; top: 30px; right: 0; font-size: 14px;}
+.parameters-list li.ps h2 { position: relative; line-height: 90px;}
+.parameters-list li.ps span { top: 26px;}
+
+
+.footer-link { padding: 30px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
+.footer-link dl { float: left; width: 19.9%;}
+.footer-link dt { line-height: 45px; font-weight: 700;}
+.footer-link dd { line-height: 28px;}
+.footer-link a { color: #515151; text-decoration: none;}
+.footer-link a:hover { color: #31a5e7;}
+
+.copyright { padding: 20px 0; text-align: center;}
+
+#fp-nav ul li:first-child, #fp-nav ul li:last-child { display: none;}

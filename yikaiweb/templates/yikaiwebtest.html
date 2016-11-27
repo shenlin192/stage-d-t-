@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>test</title>
+
+    <link rel="stylesheet" href="/{$project_path}/styles/global/jquery.ui.rotatable.css">
+    <link rel="stylesheet" href="/{$project_path}/styles/global/index1.css">
+
+    <link rel="stylesheet" href="/{$project_path}/styles/global/jquery.contextMenu.css" type="text/css" media="screen">
+    <!--link href="http://cdn.bootcss.com/jqueryui/1.12.0/jquery-ui.css" rel="stylesheet"-->
+
+    <script src="/{$project_path}/js/jquery.min.js"></script>
+    <script src="/{$project_path}/js/jquery-ui.js"></script>
+    <script src="/{$project_path}/js/jquery.ui.rotatable.min.js"></script>
+    <script src="/{$project_path}/js/jquery.ui.position.min.js"></script>
+    <script src="/{$project_path}/js/jquery.contextMenu.min.js"></script>
+    <script src="/{$project_path}/js/jquery.ui.rotatable.min.js"></script>
+
+
+</head>
+<body>
+    <header>这里是header</header>
+
+    <div>
+        <input id="twoWayBinding" type="number" style="position:fixed;top:0">
+    </div>
+
+    <!--左侧增加框（以后要通过数据库动态生成增加菜单）-->
+    <section id="add-box">
+        <div id="lib101" class = "component good">S.H.I.E.L.D</div>
+        <div id="lib102" class = "component bad">Hydra</div>
+        <div id="lib201" class = "component bad">AUTOBOT </div>
+        <div id="lib202" class = "component bad">DECEPTICON </div>
+    </section>
+
+    <!--放置元素的容器-->
+    <section id="mainContentContainer" style="width:100%; height:1000px; background-color:#ccc; color:white;">
+
+    </section>
+
+    <!--edit-menu-->
+    <section id="edit-menu">
+        <div id="edit-menu-item1">
+            menuItem1
+        </div>
+        <div id="edit-menu-item2">
+            menuItem2
+        </div>
+        <div id="edit-menu-item3">
+            menuItem3
+        </div>
+        <div id="edit-menu-item4">
+            menuItem4
+        </div>
+    </section>
+
+    <!--edit-functions-->
+    <section id="edit-details">
+        <div id="edit-menu-item1-function1">
+            edit-menu-item1-function1
+        </div>
+        <div id="edit-menu-item1-function2">
+            edit-menu-item1-function2
+        </div>
+        <div id="edit-menu-item1-function3">
+            edit-menu-item1-function3
+        </div>
+        <div id="edit-menu-item2-function1">
+            edit-menu-item2-function1
+        </div>
+    </section>
+
+    <div class="elementToolbar" style="top: 1561px; left: 160px;">
+        <div class="elemBtnBox setting" title="设置当前元素">
+            <span class="elemBtn"></span><span class="elemText">设置</span>
+        </div>
+        <div class="elemBtnBox zindex" title="修改当前元素层级">
+            <span class="elemBtn"></span><span class="elemText">层级</span>
+            <ul class="elenentToolbarContext">
+                <li class="etbcli up">向上一层</li>
+                <li class="etbcli down">向下一层</li>
+                <li class="etbcli top">顶层</li>
+                <li class="etbcli bottom">底层</li>
+            </ul>
+        </div>
+        <div class="elemBtnBox delete" title="删除元素"><span class="elemBtn"></span><span class="elemText">删除</span></div>
+        <div class="elemBtnBox animate" title="设置动画"><span class="elemBtn"></span><span class="elemText">动画</span></div>
+        <div class="elemBtnBox copy" title="复制当前元素到剪切板"><span class="elemBtn"></span><span class="elemText">复制</span>
+        </div>
+        <div class="elemBtnBox help" title=""><span class="elemBtn"></span><span class="elemText">帮助</span></div>
+    </div>
+
+    <!--footer部分-->
+    <footer>
+        <button class="save-page">
+            save
+        </button>
+    </footer>
+
+
+
+<script>
+
+    //A keyboard event handler can be attached to any element, but the event is only sent to the element that has the focus.
+    // Focusable elements can vary between browsers, but form controls can always get focus so are reasonable candidates for this event type.
+
+    //自定义一个存放element各个属性的数组,这是一个必要的全局变量
+    var templateInfo1={$elements_type};
+
+    var projectpath='/'+{$project_path_js}+'/';
+
+    console.log(projectpath);
+
+    var templateInfo=[
+        [1,"firstType","element1"],
+        [1,"firstType","element2"],
+        [2,"secondType","element3"],
+        [3,"thirdType","element4"]
+    ];
+
+    var pageInfo={$elements_detail};
+
+    //可动态增加的element的初始值
+    var elementIdIndex = pageInfo.length+1;
+
+
+    //初始化页面元素
+   {
+        let container=$('#mainContentContainer');
+
+        for(let i=0;i<pageInfo.length;i++){
+
+            let elementId="element"+parseInt(pageInfo[i]["elementId"]);
+
+            container.append(`<div id=${elementId}></div>`);
+
+            let newElement=$("#"+elementId);
+
+            newElement.addClass('element');
+
+            if(pageInfo[i]["draggable"]==1){
+                newElement.addClass('draggable')
+            }
+            //rotatable
+            if(pageInfo[i]["resizable"]==1) {
+                newElement.addClass('resizable').append(
+                        '<div class="ui-resizable-handle ui-resizable-nw"></div>' +'<div class="ui-resizable-handle ui-resizable-ne"></div>' +'<div class="ui-resizable-handle ui-resizable-sw"></div>' +
+                        '<div class="ui-resizable-handle ui-resizable-se"></div>' + '<div class="ui-resizable-handle ui-resizable-n"></div>' + '<div class="ui-resizable-handle ui-resizable-s"></div>' +
+                        '<div class="ui-resizable-handle ui-resizable-e"></div>' + '<div class="ui-resizable-handle ui-resizable-w"></div>');
+            }
+
+            newElement.offset(
+                    {left:pageInfo[i]['positionX'],top:pageInfo[i]['positionY']}
+            );
+
+            newElement.css({
+                width:pageInfo[i]['width'],
+                height:pageInfo[i]['height'],
+                transform: 'rotate('+pageInfo[i]['rotation']+'rad)'
+            })
+        }
+    }
+
+
+    //初始化原有元素基础事件
+    $(document).ready(function(){
+
+        $('.draggable').draggable({
+            start: function() {
+                $('#edit-menu').hide();
+            },
+            drag:function(event,ui){
+                $('#twoWayBinding').val(ui.offset.top);
+            },
+            stop:function(){
+                let index=getIndexOfPageInfo($(this).attr('id'));
+                pageInfo[index]['positionX']=$(this).offset()['left'];
+                pageInfo[index]['positionY']=$(this).offset()['top'];
+            }
+        });
+
+        $('.rotatable').rotatable({
+            wheelRotate:false,
+            start:function(){
+            },
+            rotate:function(event,ui){
+                console.log(ui.angle.current);
+            },
+            stop:function(){
+                console.log('hi');
+                let index=getIndexOfPageInfo($(this).attr('id'));
+                let matrix=$(this).css('transform');
+                let values = matrix.split('(')[1].split(')')[0].split(',');
+                pageInfo[index]['rotation']=values[1];
+                //console.log($(this).css("transform"));
+            }
+
+        });
+
+        $('.resizable').resizable({
+            handles: {
+                'nw': '.ui-resizable-nw',
+                'ne': '.ui-resizable-ne',
+                'sw': '.ui-resizable-sw',
+                'se': '.ui-resizable-se',
+                'n': '.ui-resizable-n',
+                'e': '.ui-resizable-e',
+                's': '.ui-resizable-s',
+                'w': '.ui-resizable-w'
+            },
+            stop:function(){
+                let index=getIndexOfPageInfo($(this).attr('id'));
+                //console.log($(this).width())
+                pageInfo[index]['width']=$(this).width();
+                pageInfo[index]['height']=$(this).height();
+            }
+        });
+
+        $('.ui-resizable-handle').hide();
+
+        $('.ui-rotatable-handle').hide();
+
+        $(".element").each(function() {
+            $( this ).attr("tabindex","-1");
+        });
+    });
+
+
+    $('.save-page').on('click',function(){
+        post_ajax(pageInfo);
+    });
+
+
+    //这一段是用来将元素从增加菜单中拉出来
+    (function(){
+        //鼠标点击时鼠标相对容器的位置
+        var boxX,boxY;
+        $(".component").mousedown(function(e){
+            boxX = e.pageX - $(this).offset().left;
+            boxY = e.pageY - $(this).offset().top;
+        }).draggable({helper:'clone'});
+
+        $("#mainContentContainer").droppable({
+            accept: ".component",
+            drop: function(event,ui){
+                console.log($(ui.draggable));
+                //给克隆得到的新元素加上经过编号的ID
+                $('#mainContentContainer').append($(ui.draggable).clone().attr('id',"element"+elementIdIndex));
+                var theDrag = $("#"+"element"+elementIdIndex);
+
+                //拉出来的element都是可以drag copy 以及基本的element属性
+                theDrag.removeClass().addClass('draggable copyable element rotatable resizable');
+                elementAssembler(theDrag);
+
+                //当前鼠标相对页面的位置-鼠标相对容器的位置 = 容器相对页面的位置
+                theDrag.offset({top:(event.pageY - boxY),left:(event.pageX - boxX)});
+
+                //给每个元素加上tabindex属性，使得其可以获取焦点
+                theDrag.attr("tabindex","-1");
+                elementIdIndex ++;
+            }
+        });
+    })();
+
+    $('.copyable').on('focus',function(){
+        var innerCount = 1;
+        var copyDiv=null;
+        //ctrl C after click
+        $(this).on("keydown",function(event){
+
+            //按下ctrl C后可复制
+            if(event.ctrlKey&&event.keyCode == 67){
+
+                event.keyCode = 0;
+
+                $('.ui-rotatable-handle').hide();
+                $('.ui-resizable-handle').hide();
+                $('#edit-menu').hide();
+
+                copyDiv = $(this);
+
+                //ctrl V after click
+                $(this).on("keydown",function(event) {
+
+                    var position=$(this).offset();
+
+                    if (event.ctrlKey&&event.keyCode == 86)
+                    {
+                        event.keyCode = 0;
+
+                        $('#mainContentContainer').append(copyDiv.clone().attr('id', 'element' + elementIdIndex));
+
+                        var newElement= $('#' + 'element' + elementIdIndex);
+
+                        elementAssembler(newElement);
+
+                        newElement.offset(
+                            {left: (position.left + innerCount * 10), top: (position.top + innerCount * 10)}
+                        );
+                        newElement.find('.ui-resizable-handle').hide();
+
+                        newElement.find('.ui-rotatable-handle').hide();
+
+                        elementIdIndex++;
+
+                        innerCount++;
+                    }
+                });//end of ctrl v
+            }
+        });//end of ctrl c
+    });
+
+
+    //element元素点击左键后的动作
+    $("#mainContentContainer").on("mousedown",".element",function(){
+
+       // console.log($(this).attr('id'));
+
+        //隐藏所有二级菜单的内容
+        $('#edit-details').children().hide();
+
+        //获取当前elementId     获取element的位置
+        var currentElementId=$(this).attr('id');
+        var position=$(this).offset();
+
+        //点击左键
+        //editMenuHelper(currentElementId,position);
+
+        //把其他旋转手柄都隐藏
+        $('.ui-rotatable-handle').hide();
+        if($(this).hasClass('rotatable')){
+            $(this).find('.ui-rotatable-handle').show();
+        }
+
+        //把其他resize手柄都隐藏
+        $('.ui-resizable-handle').hide();
+        if($(this).hasClass('resizable')){
+            //检测是否已经激活resizable功能
+            $(this).find('.ui-resizable-handle').show();
+        }
+    });
+
+    $('#mainContentContainer').on('click','.draggable',function(){
+        $('#twoWayBinding').val(parseInt($(this).offset().top)).data('storeId',$(this).attr('id'));
+    });
+
+    //this works perfectly
+    $('#twoWayBinding').on('keyup, mousewheel',function(){
+       let id=$(this).data('storeId');
+        $('#'+id).offset({top:$(this).val()});
+    });
+
+    //下面这一段是给所有页面上的element 定义点击右键和左键时出来的菜单
+    $(function() {
+        $.contextMenu({
+            selector: '.element',
+            callback: function(key, options) {
+                var m = "clicked: " + key;
+                console.log(m) ;
+            },
+            items: {
+                "edit": {name: "Edit", icon: "edit"},
+                "cut": {name: "Cut", icon: "cut"},
+                "copy": {name: "Copy", icon: "copy"},
+                "paste": {name: "Paste", icon: "paste"},
+                "delete": {name: "Delete", icon: "delete"},
+                "sep1": "---------",
+                "quit": {name: "Quit", icon: function(){
+                    return 'context-menu-icon context-menu-icon-quit';
+                }}
+            }
+        })
+    });
+
+
+
+
+    //一级编辑菜单的第一个选项被按下时
+    $('#edit-menu-item1').on('click',function(){
+
+        var elementId=$(this).parent().data( "storeId" );
+
+        var position=$(this).offset();
+
+        var type=0;
+        //根据id 找到对应的type
+        for(let i=0;i<pageInfo.length;i++){
+            if(pageInfo[i][2]==elementId){
+                type=pageInfo[i][0];
+                break
+            }
+        }
+
+       //根据不同的type类型，展示不同的二级菜单
+        for(let i=1;i<=3;i++){
+            if(type==i){
+                var temp="edit-menu-item1-function"+i;
+                $('#'+temp).css({'display':'block'}).offset({top:position.top,left:position.left+80});
+                break;
+            }
+        }
+
+      /*
+      if(type==1){
+           // console.log('hi');
+            $('#edit-menu-item1-function1').css({'display':'block'}).offset({top:position.top,left:position.left+80});
+        }else if(type==2){
+            $('#edit-menu-item1-function2').css({'display':'block'}).offset({top:position.top,left:position.left+80});
+        }else if(type==3){
+            $('#edit-menu-item1-function3').css({'display':'block'}).offset({top:position.top,left:position.left+80});
+        }
+        */
+
+    });
+
+    //编辑菜单控制函数
+    function editMenuHelper(id,position){
+
+        var type=0;
+
+        for(let i=0;i<pageInfo.length;i++){
+            if(pageInfo[i][2]==id){
+                type=pageInfo[i][0];
+                break;
+            }
+        }
+
+        //先让编辑菜单显示出来
+        $( "#edit-menu" ).show().offset({ top: position.top-100, left: position.left+20 }).data('storeId',id);
+
+        for(let i=0;i<4;i++){
+            let selector='edit-menu-item'+(i+1);
+            $("#"+selector).show();
+        }
+
+        //根据不同的type 隐藏不需要的部分
+       if(type==1){
+           $('#edit-menu-item3').hide();
+       }else if(type==2){
+
+       }else if(type==3){
+           $('#edit-menu-item4').hide();
+           $('#edit-menu-item2').hide();
+       }
+    }
+
+    //元素组装函数
+    function elementAssembler(element){
+
+        if(element.hasClass('draggable')){
+            element.draggable({
+                start: function () {
+                    $('#edit-menu').hide();
+                },
+
+
+            });
+        }
+
+        if(element.hasClass('rotatable')){
+            element.rotatable({
+                start:function(){
+                    console.log('hello world');
+                },
+                wheelRotate:false
+            });
+        }
+
+        if(element.hasClass('resizable')){
+            if(!element.find('.ui-resizable-handle').length){
+                element.append('<div class="ui-resizable-handle ui-resizable-nw"></div>' +
+                        '<div class="ui-resizable-handle ui-resizable-ne"></div>' +
+                        '<div class="ui-resizable-handle ui-resizable-sw"></div>' +
+                        '<div class="ui-resizable-handle ui-resizable-se"></div>' +
+                        '<div class="ui-resizable-handle ui-resizable-n"></div>' +
+                        '<div class="ui-resizable-handle ui-resizable-s"></div>' +
+                        '<div class="ui-resizable-handle ui-resizable-e"></div>' +
+                        '<div class="ui-resizable-handle ui-resizable-w"></div>');
+            }
+            element.resizable({
+                handles: {
+                    'nw': '.ui-resizable-nw',
+                    'ne': '.ui-resizable-ne',
+                    'sw': '.ui-resizable-sw',
+                    'se': '.ui-resizable-se',
+                    'n': '.ui-resizable-n',
+                    'e': '.ui-resizable-e',
+                    's': '.ui-resizable-s',
+                    'w': '.ui-resizable-w'
+                }
+            });
+        }
+
+        if(element.hasClass('copyable')){
+            element.on('focus',function(){
+                var innerCount = 1;
+                var copyDiv=null;
+                //ctrl C after click
+                element.on("keydown",function(event){
+                    if(event.ctrlKey&&event.keyCode == 67){
+                        //按下ctrl C后可复制
+                        event.keyCode = 0;
+                        $('.ui-rotatable-handle').hide();
+                        $('.ui-resizable-handle').hide();
+                        $('#edit-menu').hide();
+                        copyDiv = element;
+                        //ctrl V after click
+                        element.on("keydown",function(event) {
+                            var position=element.offset();
+                            if (event.ctrlKey&&event.keyCode == 86)
+                            {
+
+                                event.keyCode = 0;
+                                $('#mainContentContainer').append(copyDiv.clone().attr('id', 'element' + elementIdIndex));
+                                var newElement= $('#' + 'element' + elementIdIndex);
+                                newElement.offset(
+                                        {left: (position.left + innerCount * 10), top: (position.top + innerCount * 10)}
+                                );
+                                elementAssembler(newElement);
+                                newElement.find('.ui-resizable-handle').hide();
+                                newElement.find('.ui-rotatable-handle').hide();
+                                elementIdIndex++;
+                                innerCount++;
+                            }
+                        });//end of ctrl v
+                    }
+                });//end of ctrl c
+            });
+        }
+    }
+
+    //取得旋转角度
+    function getRotationDegrees(obj) {
+        var matrix = obj.css("-webkit-transform") ||
+                obj.css("-moz-transform")    ||
+                obj.css("-ms-transform")     ||
+                obj.css("-o-transform")      ||
+                obj.css("transform");
+        if(matrix !== 'none') {
+            console.log(matrix);
+            var values = matrix.split('(')[1].split(')')[0].split(',');
+            var a = values[0];
+            console.log(values);
+            var b = values[1];
+            var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+        } else { var angle = 0; }
+        return (angle < 0) ? angle + 360 : angle;
+    }
+
+    function getIndexOfPageInfo(id){
+
+        var idNum = id.replace( /^\D+/g, '');
+
+        for(let i=0;i<pageInfo.length;i++){
+                if(pageInfo[i]['elementId']==idNum){
+                    return i;
+                }
+        }
+    }
+
+    //向后台发送数据
+    function post_ajax(pageInfo) {
+        console.log(pageInfo);
+        //.post(url,parameters,callback)
+        //url         (字符串)服务器端资源地址。
+        //parameter   (对象)需要传递到服务器端的参数。 参数形式为“键/值”。
+        //callback    (函数)在请求完成时被调用。该函数参数依次为响应体和状态。
+        $.post('save_element.php', {
+            page_info:pageInfo
+        }, function (result) {
+            if (result) {
+               /* swal({
+                    title: "",
+                    text: "页面保存成功成功",
+                    type: "success",
+                    timer: 2000,
+                    showConfirmButton: false
+                });*/
+                console.log('hi');
+            }
+        })
+    }
+
+
+   /*
+    function transformer(templateInfo) {
+
+        var libTypeId=[],libTypeName=[];
+
+        for(var i=0;i<templateInfo.length;i++){
+            libTypeId.push(parseInt(templateInfo[i]['lib_type_id']));
+        }
+
+        //取得一级分类的id
+        var a = [], b = [], prev;
+        libTypeId.sort();
+        for (  i = 0; i < libTypeId.length; i++ ) {
+            if ( libTypeId[i] !== prev ) {
+                a.push(libTypeId[i]);
+                b.push(1);
+            } else {
+                b[b.length-1]++;
+            }
+            prev = libTypeId[i];
+        }
+
+        //取得一级分类各个id对应的名称
+        var j = 0;
+        for (  i = 0; i < templateInfo.length; i++ ) {
+            if(templateInfo[i]['lib_type_id']==a[j]&&j<a.length){
+                libTypeName.push(templateInfo[i]['lib_type_name']);
+                j++;
+            }
+        }
+
+        //取得二级分类各自对应信息
+        var secondCategory=[];
+
+        for( i = 0 ;i < a.length; i++ ){
+            secondCategory.push([]);
+        }
+
+        i=0;
+        for(j= 0;j<a.length;j++){
+            for (  i ; i < templateInfo.length&&a[j]==templateInfo[i]['lib_type_id']; i++ ) {
+                secondCategory[j].push([templateInfo[i]['lib_id'],templateInfo[i]['lib_name'],templateInfo[i]['lib_title'],templateInfo[i]['lib_preview_img'],templateInfo[i]['sub_lib_id']]);
+            }
+        }
+
+        //return [a,b,libTypeName,secondCategory];
+        var array=[];
+        for(i=0;i<a.length;i++){
+            array.push([a[i],libTypeName[i],secondCategory[i]]);
+        }
+
+        return array
+    }
+    */
+
+
+    //根据数据库动态生成增加列表
+   /*
+     var templateInfo = {$page_template};
+
+     templateInfo.sort(function(x, y){
+     return (x['lib_id'] - y['lib_id']);
+     });
+
+     templateInfo=transformer(templateInfo);
+
+     //根据数据库动态生成增加列表
+     (function(){
+     for (var i = 0; i < templateInfo.length; i++) {
+     $('#add-box-list').append("<li id='firstTierCategory"+i+"'>" + templateInfo[i][1] + "<ul></ul></li>");
+     var firstTierCategory="firstTierCategory"+i;
+     for (var j = 0; j < templateInfo[i][2].length; j++) {
+     $('#'+firstTierCategory).find('ul').append("<li>"+templateInfo[i][2][j][2]+"</li>").append("<img data-lib-type='"+templateInfo[i][2][j][0] +"'src='"+templateInfo[i][2][j][3]+"'</img>");
+     }
+     }
+     })();
+     */
+
+</script>
+
+</body>
+</html>

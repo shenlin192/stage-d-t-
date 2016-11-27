@@ -1,0 +1,12 @@
+/*********辅助线模板********/
+.lib13 .auxiliary-line-container{
+    background: transparent ;
+    padding: 10px;
+}
+
+.lib13 .auxiliary-line{
+    background:#bbb;
+    width:90% ;
+    height: 1px;
+    margin:auto;
+}

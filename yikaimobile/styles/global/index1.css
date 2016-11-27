@@ -1,0 +1,282 @@
+body{
+	background-color: lightblue
+}
+
+header{
+    background-color: limegreen;
+    padding: 10px;
+}
+
+footer{
+    background-color: limegreen;
+    padding: 10px;
+}
+
+.element{
+    outline: 3px solid #000;
+    position: absolute;
+}
+
+#edit-menu{
+    display: none;
+    position: absolute;
+}
+
+#edit-details{
+    position:absolute;
+}
+
+#edit-details>*{
+    position:absolute;
+    display: none;
+}
+
+#context-menu{
+    display: none;
+}
+
+#add-box{
+    position: fixed;
+}
+
+.component{
+   width:100px;
+    color:white;
+    border:black 1px solid;
+    background-color:#00A;
+}
+
+.draggable {
+    cursor: move;
+}
+
+.resizable .ui-resizable{
+    position: absolute !important;
+}
+
+.resizable .ui-resizable-handle {
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    position: absolute;
+    /*display:none;*/
+}
+
+.resizable .ui-resizable-nw {
+    left: -5px;
+    top: -5px;
+    cursor: nw-resize;
+}
+.resizable .ui-resizable-ne {
+    top: -5px;
+    right: -5px;
+    cursor: ne-resize;
+}
+.resizable .ui-resizable-sw {
+    bottom: -5px;
+    left: -5px;
+    cursor: sw-resize;
+}
+.resizable .ui-resizable-se {
+    bottom: -5px;
+    right:-5px;
+    cursor: se-resize;
+}
+.resizable .ui-resizable-n {
+    top: -5px;
+    left:50%;
+    cursor: n-resize;
+}
+.resizable .ui-resizable-s {
+    bottom: -5px;
+    left: 50%;
+    cursor: s-resize;
+}
+.resizable .ui-resizable-w {
+    left:-5px;
+    top:calc(50% - 5px);
+    cursor: w-resize;
+}
+.resizable .ui-resizable-e {
+    right:-5px;
+    top:calc(50% - 5px);
+    cursor: e-resize;
+}
+
+
+.elementToolbar {
+    position: absolute;
+    height: 50px;
+    z-index: 999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.elementToolbar .elemBtnBox {
+    position: relative;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.elementToolbar .elemBtnBox:hover,
+.elemBtnBox.on {
+    background-color: #49a2d2;
+    color: #fff;
+}
+
+.elementToolbar .elemBtnBox.delete:hover {
+    background-color: #ff6a6a;
+}
+
+.elementToolbar .elemBtn {
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    margin-top: 6px;
+    display: block;
+}
+
+.elementToolbar .elemText {
+    display: none;
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.elementToolbar .elemBtnBox:hover .elemBtn,
+.elemBtnBox.on .elemBtn {
+    display: none;
+}
+
+.elementToolbar .elemBtnBox:hover .elemText,
+.elemBtnBox.on .elemText {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/*æ–‡ç« å†…å®¹å›¾æ ‡*/
+.elemBtnBox.article .elemBtn {
+    background: url(../../../images/v2/design/elementEdit/btn.png) no-repeat center -580px;
+}
+
+.elemBtnBox.setting .elemBtn {
+    background: url(../../../images/v2/design/elementEdit/btn.png) no-repeat center 0px;
+}
+
+.elemBtnBox.zindex .elemBtn {
+    background: url(../../../images/v2/design/elementEdit/btn.png) no-repeat center -40px;
+}
+
+.elemBtnBox.delete .elemBtn {
+    background: url(../../../images/v2/design/elementEdit/btn.png) no-repeat center -80px;
+}
+
+.elemBtnBox.help .elemBtn {
+    background: url(../../../images/v2/design/elementEdit/btn.png) no-repeat center -120px;
+}
+
+.elemBtnBox.dogroup .elemBtn {
+    background: url(../../../images/v2/design/elementEdit/btn.png) no-repeat center -237px;
+}
+
+.elemBtnBox.removegroup .elemBtn {
+    background: url(../../../images/v2/design/elementEdit/btn.png) no-repeat center -197px;
+}
+
+.elemBtnBox.copy .elemBtn {
+    background: url(../../../images/v2/design/elementEdit/btn.png) no-repeat center -276px;
+}
+
+.elemBtnBox.carouseAddElement .elemBtn {
+    background: url(../../../images/v2/design/elementEdit/btn.png) no-repeat center -318px;
+}
+
+.elemBtnBox.addFreeContainer .elemBtn {
+    background: url(../../../images/v2/design/elementEdit/btn.png) no-repeat center -523px;
+}
+
+/*å¯¹é½*/
+.elemBtnBox.align .elemBtn {
+    background: url(../../../images/v2/design/elementEdit/btn.png) no-repeat center -358px;
+}
+
+/*åˆ†å¸ƒ*/
+.elemBtnBox.distribute .elemBtn {
+    background: url(../../../images/v2/design/elementEdit/btn.png) no-repeat center -446px;
+}
+
+.elemBtnBox.animate .elemBtn {
+    background: url(../../../images/v2/design/elementEdit/btn.png) no-repeat center -402px;
+}
+.elemBtnBox.gotoModityDetail .elemBtn {
+    background: url(../../../images/v2/design/elementEdit/btn.png) no-repeat center -622px;
+}
+.elemBtnBox .elenentToolbarContext {
+    position: absolute;
+    top: 38px;
+    display: none;
+    width: 74px;
+    font-size: 12px;
+    padding: 4px 0;
+    background: #fff;
+    border-radius: 4px;
+    left: 24px;
+    -webkit-transform: translateX(-23px);
+    -ms-transform: translateX(-23px);
+    -o-transform: translateX(-23px);
+    transform: translateX(-23px);
+    box-shadow: 0px 0px 6px #ccc;
+}
+
+.elemBtnBox .elenentToolbarContext:before {
+    position: absolute;
+    content: "";
+    top: -12px;
+    left: 7px;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    border: 6px #fff solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+.elemBtnBox .elenentToolbarContext li {
+    color: #333;
+    line-height: 28px;
+    background-color: #fff;
+    border-bottom: solid 1px #ebebeb;
+    cursor: pointer;
+}
+
+.elemBtnBox .elenentToolbarContext li:last-child {
+    border: none;
+}
+
+.elemBtnBox .elenentToolbarContext li:hover {
+    background-color: #d8f1ff;
+}
+
+
+
+
+
+
+
+
+

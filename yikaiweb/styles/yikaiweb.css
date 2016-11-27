@@ -1,0 +1,217 @@
+footer{
+    text-align: center;
+    height: 65px;
+    background: RGBA(0,0,0,.8);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+/*****************************************************************************/
+.multimedia{
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+}
+
+#audio1{
+    position: relative;
+    top: 400px;
+    width: 500px;
+    margin: auto;
+ }
+
+#video1{
+    position: relative;
+    top: 110px;
+    width: 600px;
+    margin: auto;
+}
+/*****************************************以下是保存按钮闪光特效（不需要修改）****************************************/
+.save-btn,.preview-page {
+    margin: 15px;
+    border-radius: 2px;
+    line-height: 30px;
+    display: inline-block;
+    position: relative;
+    background-color: #4a83dc;
+    border: none;
+    color: white;
+    width:  100px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.save-btn::after,.preview-page::after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.6s
+}
+
+.save-btn:active::after,.preview-page:active::after {
+    /***从此状态变成上面的状态***/
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+/***********************************************音频视频选择框**************************************************/
+.multimedia{
+    padding:20px;
+}
+
+/***************************************一下是编辑框的默认样式（不需要修改）******************************************/
+.edit-box{
+    width: 680px;
+    position: fixed;
+    left: 400px;
+    top: 100px;
+    background-color: rgb(255,255,255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    margin-bottom: 100px;
+    z-index: 10;
+}
+
+.edit-box .notice{
+    border-bottom: 1px solid #dcdcdc;
+    padding:20px;
+    margin-bottom: 50px;
+}
+
+.edit-box .notice .notice-text{
+    font-size: 16px;
+    line-height: 24px;
+    color: #999;
+}
+
+.edit-box .cancel-edit-box{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    color: red;
+    cursor: pointer;
+}
+.edit-box .btn-edit-box{
+    margin:0 auto;
+    display: block;
+}
+
+.edit-box input[type="file"] {
+    display: none;
+}
+
+.edit-box .custom-file-upload {
+    margin: 10px auto;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+}
+
+.edit-box .custom-file-upload img{
+    width: 100%;
+    max-height: 150px;
+}
+
+.edit-box .custom-file-upload .prompt-text{
+    color: #999;
+    margin-top: -30%;
+    margin-bottom: 15%;
+    text-align: center;
+}
+
+.edit-box .input-section input{
+    width: 100%;
+    height: 30px;
+    margin: 0 auto 10px;
+    border-radius: 0px
+}
+
+.edit-box .input-section .input-items{
+    width:100%;
+    margin:auto;
+}
+
+.edit-box .input-section .input-items div{
+    width:100%;
+    margin:auto
+}
+
+.edit-box .input-section .input-items input{
+    display: inline-block;
+    width: 75%;
+    height: 38px;
+    border: 1px solid #dcdcdc;
+    margin: 0 0 10px ;
+    border-radius: 0px;
+}
+
+.edit-box .input-section .input-items span{
+    display: inline-block;
+    width:25%;
+    line-height: 40px;
+    font-size: 14px;
+    color: #7f7f7f;
+}
+
+/******************************根据不同编辑框设定不同的input section宽度**********************************/
+#sectionEditor .input-section{
+    position:relative;
+    box-sizing: content-box;
+    padding:25px;
+    width:340px;
+    outline: #dcdcdc solid 1px;
+    margin: 1px auto 20px auto;
+}
+
+#slideEditor .input-section{
+    width:200px;
+    margin: auto;
+}
+
+#slideGroup{
+    display:flex;
+    flex-flow: row wrap;
+}
+
+#multimediaEditor .input-section{
+    position:relative;
+    box-sizing: content-box;
+    padding:25px;
+    width:400px;
+    text-align: center;
+    outline: #dcdcdc solid 1px;
+    margin: 1px auto 20px auto;
+}
+
+#logoEditor .input-section{
+    position:relative;
+    box-sizing: content-box;
+    padding:25px;
+    width:120px;
+    text-align: center;
+    outline: #dcdcdc solid 1px;
+    margin: 1px auto 20px auto;
+}
+
+/*********************************************js动态增加的样式***************************************************/
+.showOutline{
+    outline: 1px solid #60c1ff;
+    outline-offset: 10px;
+}
+
+.forceOpen>.dropdown-menu {
+    display: block;
+}
+

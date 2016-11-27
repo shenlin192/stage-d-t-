@@ -1,0 +1,76 @@
+/*************单列大图模块***************/
+
+.type-25 .prompt-text{
+    color: #999;
+    margin-top: -35%;
+    margin-bottom: 20px
+}
+
+.type-25 .item-group{
+    display: block;
+    width: 90%;
+    margin:auto;
+    height:350px;
+    overflow: auto;
+}
+
+.type-25 .input-section{
+    position:relative;
+    box-sizing: content-box;
+    padding:25px;
+    width:340px;
+    outline: #dcdcdc solid 1px;
+    margin: 1px auto 20px auto;
+}
+
+.type-25 .input-section .deleteItem{
+    position: absolute;
+    left: 95%;
+    top: 10px;
+    cursor: pointer;
+}
+
+.type-25 .btn-add{
+    width: 118px;
+    height: 36px;
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+    color: #666666;
+    font-size: 14px;
+    line-height: 36px;
+    margin-top: 25px;
+}
+
+.type-25 .btn-add:hover{
+    background: #dcdcdc;
+    color: #111;
+}
+
+.lib25{
+    width: 100%;
+    display: block;
+}
+
+.lib25 .show-box{
+    position:relative;
+    width: 100%;
+}
+
+.lib25 img{
+    width: 100%;
+    max-height: 200px;
+    padding: 0 2px 0 2px;
+}
+
+.lib25 a {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+}
+
+.lib25 .showPadding img{
+    padding:4px;
+}

@@ -1,0 +1,37 @@
+/****************文字模块****************/
+.type-24 .tinyMCE ~button
+{
+    top: 240px;
+    margin: 15px;
+/* border-radius: 2px; */
+    line-height: 30px;
+    display: inline-block;
+    position: absolute;
+    background-color: #4a83dc;
+    border: none;
+    color: white;
+    width: 70px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    right: 120px;
+}
+
+.lib24{
+    width: 100%;
+    display: block;
+    background: white;
+    padding: 10px;
+    text-align: initial;
+}
+
+.lib24 img{
+    max-width:150px;
+    max-height:100px;
+}
+
+.lib24 iframe {
+    max-width:300px;
+    max-height:200px;
+}

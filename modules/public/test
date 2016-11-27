@@ -1,0 +1,4 @@
+<?php
+ print gmdate("Y-m-d\TH:i:s\Z");
+?>
+

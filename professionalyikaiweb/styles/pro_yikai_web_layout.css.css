@@ -1,0 +1,137 @@
+html,body{
+    height: 100%;
+    padding: 0;
+    margin: 0}
+.side{
+    width: 30vw;
+    background-color: #1E2B9E;
+    height: 100%;
+    float: left;
+    overflow: auto;
+}
+.side-item{
+    margin: 20px 20px 0 80px;
+}
+.main{
+    background-color: #2d8ac7;
+    margin-left: 30vw;
+    height: 100%;
+    overflow: auto;
+}
+.main .line{
+    height: 100vh;
+}
+.side .width1{
+    width: 100%;
+}
+.side .width2{
+    width: 50%;
+}
+.side .width3{
+    width: 33.33%;
+}
+.side .width4{
+    width:25% ;
+}
+.main img{
+    width:100%;
+}
+
+.main .height1{
+    height: 100vh;
+}
+.main .height2{
+    height: 50vh;
+}
+.main .height3{
+    height: 33.33vh;
+}
+.main .height4{
+    height:25vh;
+}
+
+#elementToolbar1{
+    display: none;
+    position: absolute;
+}
+
+.elementToolbar {
+    position: absolute;
+    height: 50px;
+    z-index: 999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.elementToolbar .elemBtnBox {
+    position: relative;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.elementToolbar .elemBtn {
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    margin-top: 6px;
+    display: block;
+}
+
+.elementToolbar .elemBtnBox:hover,
+.elemBtnBox.on {
+    background-color: #49a2d2;
+    color: #fff;
+}
+
+.elementToolbar .elemBtnBox.delete:hover {
+    background-color: #ff6a6a;
+}
+
+.elementToolbar .elemText {
+    display: none;
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.elementToolbar .elemBtnBox:hover .elemBtn,
+.elemBtnBox.on .elemBtn {
+    display: none;
+}
+
+.elementToolbar .elemBtnBox:hover .elemText,
+.elemBtnBox.on .elemText {
+    display: inline-block;
+    vertical-align: top;
+}
+.elemBtnBox.delete .elemBtn {
+    background: url(../images/preview/btn.png) no-repeat center -80px;
+}
+.elemBtnBox.up .elemBtn{
+    background: url(../images/preview/btn.png) no-repeat center -650px;
+}
+.elemBtnBox.down .elemBtn{
+    background: url(../images/preview/btn.png) no-repeat center -680px;
+}
+/*.line{*/
+    /*background-size: 100% 100%;*/
+    /*background-clip: content-box;*/
+    /*background-origin: content-box;*/
+/*}*/
+/*.line button{*/
+    /*margin: 0 auto;*/
+/*}*/

@@ -1,0 +1,78 @@
+/********双列大图模块***********/
+.type-26 .item-group{
+    display: block;
+    width: 100%;
+    margin:auto;
+    height:350px;
+    overflow: auto;
+}
+
+.type-26 .input-section{
+    display: flex;
+    flex-wrap: wrap;;
+    position:relative;
+    box-sizing: content-box;
+    padding:25px;
+    width:85%;
+    outline: #dcdcdc solid 1px;
+    margin: 1px auto 20px auto;
+}
+
+.type-26 .input-section .item0{
+    width: 45%;
+    margin:auto;
+}
+
+.type-26 .input-section .item1{
+    width: 45%;
+    margin:auto;
+}
+
+.type-26 .input-section .deleteItem{
+    position: absolute;
+    left: 95%;
+    top: 10px;
+    cursor: pointer;
+}
+
+.type-26 .btn-add{
+    width: 118px;
+    height: 36px;
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+    color: #666666;
+    font-size: 14px;
+    line-height: 36px;
+    margin-top: 25px;
+}
+
+.type-26 .btn-add:hover{
+    background: #dcdcdc;
+    color: #111;
+}
+
+.lib26 {
+    width: 100%;
+    display: block;
+}
+
+.lib26 .img-group{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lib26 .item{
+    margin: auto;
+    width: 50%
+}
+
+.lib26 img{
+    width:100%;
+    height: 150px;
+}
+
+.lib26 .showPadding img{
+    padding:4px;
+}

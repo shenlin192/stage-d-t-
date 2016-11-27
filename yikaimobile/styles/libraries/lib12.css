@@ -1,0 +1,36 @@
+/********进入商店模板*******/
+.type-12 .input-section{
+    margin:auto;
+    width:300px;
+}
+
+.lib12{
+    text-align: initial;
+    padding: 10px;
+    background-color: white;
+    width: 100%;
+    display: block;
+}
+
+.lib12 img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.lib12 .auxiliary-area{
+    text-align:center;
+}
+
+.lib12 span:nth-of-type(1){
+    color: #9a9a9a;
+    margin-top: .24rem;
+    margin-right: .4rem;
+}
+
+.lib12 span:nth-of-type(2){
+    margin-left: 30%;
+    color: #9a9a9a;
+    margin-top: .24rem;
+    margin-right: .4rem;
+}
